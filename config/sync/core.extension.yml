@@ -9,12 +9,14 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor5: 0
+  components: 0
   config: 0
   contextual: 0
   datetime: 0
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  emulsify_twig: 0
   field: 0
   field_ui: 0
   file: 0
@@ -49,7 +51,8 @@ module:
   views: 10
   standard: 1000
 theme:
-  olivero: 0
   claro: 0
   gin: 0
+  stable9: 0
+  gallopinto: 0
 profile: standard

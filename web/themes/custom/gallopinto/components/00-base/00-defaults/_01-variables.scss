@@ -1,0 +1,24 @@
+/*
+ * General Variables
+ * Note: colors should go into
+ * components/00-base/01-colors/_color-vars.css
+ * and breakpoint related vars into
+ * components/00-base/base/_breakpoints.css
+*/
+
+// Fonts
+$font-heading: sans-serif;
+$font-body: sans-serif;
+
+// Spacing Base
+$space: 8px;
+
+// Spacings
+$space-2: $space * 2; // 16px
+$space-3: $space * 3; // 24px
+$space-4: $space * 4; // 32px
+$space-6: $space * 6; // 48px
+$space-8: $space * 8; // 64px
+$space-12: $space * 12; // 96px
+$space-16: $space * 16; // 128px
+$space-20: $space * 20; // 160px

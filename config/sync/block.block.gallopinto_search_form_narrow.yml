@@ -1,0 +1,23 @@
+uuid: a4bbf297-2822-4c3d-91c6-17ca85e50260
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - gallopinto
+_core:
+  default_config_hash: yEBET0cqDbk8dkWzaJw-8CKft0961VBflsISoSR6Lj8
+id: gallopinto_search_form_narrow
+theme: gallopinto
+region: header
+weight: -4
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (narrow)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

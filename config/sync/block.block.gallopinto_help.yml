@@ -1,0 +1,22 @@
+uuid: 09790f03-adb1-4759-bdea-0fa0d2de2312
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - gallopinto
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: gallopinto_help
+theme: gallopinto
+region: header
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

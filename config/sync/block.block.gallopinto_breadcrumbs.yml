@@ -1,0 +1,22 @@
+uuid: 8f3213f0-9162-45c7-ad7e-f92e6ea90cbe
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - gallopinto
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: gallopinto_breadcrumbs
+theme: gallopinto
+region: header
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

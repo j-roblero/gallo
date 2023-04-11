@@ -1,0 +1,4 @@
+link_url: 'https://google.com/'
+link_content: 'This is my link text'
+link_attributes:
+  'target': '_blank'

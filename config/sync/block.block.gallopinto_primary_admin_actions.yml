@@ -1,0 +1,20 @@
+uuid: acd825ec-5c5a-4c8e-9ce4-23d5bbb69690
+langcode: en
+status: true
+dependencies:
+  theme:
+    - gallopinto
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: gallopinto_primary_admin_actions
+theme: gallopinto
+region: header
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }
