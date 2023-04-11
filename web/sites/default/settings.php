@@ -26,9 +26,26 @@ include __DIR__ . "/settings.pantheon.php";
 // $settings['skip_permissions_hardening'] = TRUE;
 
 /**
+ * Override the sync directory path.
+ */
+$settings['config_sync_directory'] = '../config/sync';
+
+/**
  * If there is a local settings file, then include it
  */
 $local_settings = __DIR__ . "/settings.local.php";
 if (file_exists($local_settings)) {
   include $local_settings;
 }
+$databases['default']['default'] = array (
+  'database' => 'drupal10',
+  'username' => 'drupal10',
+  'password' => 'drupal10',
+  'prefix' => '',
+  'host' => 'database',
+  'port' => '3306',
+  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
+  'driver' => 'mysql',
+  'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
+);
+$settings['hash_salt'] = 'DpzLLbK3ffs4blXXVtGxbd7e8BDuKLJ_h0iOcaf_nZcvQc60AjOzX_ELbvBD-dsAPJOdmRztmw';
