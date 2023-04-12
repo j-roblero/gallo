@@ -1,6 +1,6 @@
 {
-    "name": "pantheon-upstreams/drupal-composer-managed",
-    "description": "Install Drupal 9 with Composer on Pantheon.",
+    "name": "paralleldevs/gallo-pinto",
+    "description": "Based on Gallo pinto, by ParallelDevs",
     "type": "project",
     "license": "MIT",
     "repositories": [
@@ -20,13 +20,7 @@
         "drupal/core-recommended": "^10",
         "pantheon-systems/drupal-integrations": "^10",
         "cweagans/composer-patches": "^1.7",
-        "drush/drush": "^11 || ^12",
-        "drupal/admin_toolbar": "*",
-        "drupal/pathauto": "*",
-        "drupal/gin": "*",
-        "drupal/gin_toolbar": "*",
-        "drupal/components": "^3.0@beta",
-        "drupal/emulsify_twig": "^4.0"
+        "drush/drush": "^11 || ^12"
     },
     "require-dev": {
         "drupal/core-dev": "^10"

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1351e3c8fcb64785046570dc5eae1104",
+    "content-hash": "f180cfa94a2d7c95a3491635e1045b4e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2900,12 +2900,17 @@
             "dist": {
                 "type": "path",
                 "url": "upstream-configuration",
-                "reference": "9542d5ac59c22fe5b54868cc99367db9e9895f51"
+                "reference": "26205c0851973470b37224301fb2309cb7255ae3"
+            },
+            "require": {
+                "drupal/admin_toolbar": "*",
+                "drupal/components": "^3.0@beta",
+                "drupal/emulsify_twig": "^4.0",
+                "drupal/gin": "*",
+                "drupal/gin_toolbar": "*",
+                "drupal/pathauto": "*"
             },
             "type": "project",
-            "extra": {
-                "_README": "To make a custom upstream, clone this repository and add any dependencies to be provided by this upstream to this composer.json file. Leave the root-level composer.json file for the exclusive use of each individual site; do not modify it after your custom upstream has been published. See https://pantheon.io/docs/create-custom-upstream for more information."
-            },
             "transport-options": {
                 "relative": true
             }
@@ -10770,8 +10775,7 @@
     "aliases": [],
     "minimum-stability": "beta",
     "stability-flags": {
-        "pantheon-upstreams/upstream-configuration": 20,
-        "drupal/components": 10
+        "pantheon-upstreams/upstream-configuration": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
