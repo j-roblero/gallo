@@ -1,0 +1,10 @@
+uuid: ad080817-92c7-413f-a515-255372936f9e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.layout
+label: Layout
+targetEntityType: node
+cache: true

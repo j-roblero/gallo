@@ -1,0 +1,33 @@
+uuid: 1ce480e1-7cb0-4081-8283-6dfe7b830474
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.layout
+    - field.field.node.page.field_sections
+    - node.type.page
+  module:
+    - layout_paragraphs
+id: node.page.layout
+targetEntityType: node
+bundle: page
+mode: layout
+content:
+  field_sections:
+    type: layout_paragraphs
+    weight: 0
+    region: content
+    settings:
+      preview_view_mode: preview
+      nesting_depth: 4
+      require_layouts: 1
+      empty_message: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  title: true
+  uid: true

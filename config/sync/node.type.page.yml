@@ -1,0 +1,17 @@
+uuid: 7302cf6b-10bb-41a1-9d79-4490ed6509ed
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Page
+type: page
+description: 'A landing page that uses Layout Paragraphs.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

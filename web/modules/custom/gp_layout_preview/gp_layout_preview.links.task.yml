@@ -1,0 +1,5 @@
+gp_layout_preview.page_preview:
+  route_name: gp.layout_preview
+  title: 'Layout'
+  weight: 10
+  base_route: entity.node.canonical

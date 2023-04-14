@@ -1,0 +1,34 @@
+uuid: eba3e7d3-c89b-497c-8731-f1261827e141
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.field_sections
+    - node.type.page
+  module:
+    - layout_paragraphs
+    - user
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  field_sections:
+    type: layout_paragraphs_builder
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+      preview_view_mode: preview
+      nesting_depth: 4
+      require_layouts: 1
+      empty_message: Test
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

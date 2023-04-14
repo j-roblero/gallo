@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Functions to support the layout form.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_entity_form_mode_alter().
+ */
+function gp_layout_preview_entity_form_mode_alter(&$form_mode, EntityInterface $entity) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+
+  if ($entity instanceof NodeInterface && $entity->bundle() === 'page' && $route_name === 'gp.layout_preview') {
+    $form_mode = 'layout';
+  }
+}
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function gp_layout_preview_menu_local_tasks_alter(&$data, $route_name) {
+  if (str_starts_with($route_name, 'entity.node')) {
+    foreach ($data['tabs'][0] as $task_name => &$task_array) {
+      if ($task_name == 'gp_layout_preview.page_preview') {
+        $node = \Drupal::routeMatch()->getParameter('node');
+
+        if ($node instanceof NodeInterface && $node->bundle() !== 'page') {
+          $data['tabs'][0][$task_name]['#access'] = FALSE;
+        }
+      }
+    }
+  }
+}

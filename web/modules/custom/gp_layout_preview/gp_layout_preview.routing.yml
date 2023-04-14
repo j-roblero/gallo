@@ -1,0 +1,12 @@
+gp.layout_preview:
+  path: '/node/{node}/layout/edit'
+  defaults:
+    _controller: '\Drupal\gp_layout_preview\Controller\LayoutPreviewController::getForm'
+    _title: 'Preview'
+  requirements:
+    _permission: 'access content'
+    node: '\d+'
+    _entity_access: 'node.update'
+    _custom_access: '\Drupal\gp_layout_preview\Controller\LayoutPreviewController::access'
+  options:
+    _admin_route: true

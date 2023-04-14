@@ -1,0 +1,18 @@
+uuid: c2c418f9-6dc7-4925-a1ba-4cf42ec02ada
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+id: section
+label: Section
+icon_uuid: null
+icon_default: null
+description: 'A component that works as a wrapper for the components that make the page section.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: true
+    available_layouts:
+      layout_onecol: 'One column'
+      layout_twocol: 'Two column'
+      layout_threecol_25_50_25: 'Three column 25/50/25'
