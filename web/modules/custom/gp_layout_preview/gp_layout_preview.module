@@ -35,3 +35,24 @@ function gp_layout_preview_menu_local_tasks_alter(&$data, $route_name) {
     }
   }
 }
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function gp_layout_preview_page_attachments_alter(array &$attachments) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+
+  // Inject theme styles.
+  if ($route_name === 'gp.layout_preview') {
+    $attachments['#attached']['library'][] = 'gallopinto/global';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ *
+ * Register theme templates.
+ */
+function gp_layout_preview_theme(array $theme) {
+  return $theme;
+}
