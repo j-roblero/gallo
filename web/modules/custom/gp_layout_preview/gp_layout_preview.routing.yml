@@ -1,3 +1,11 @@
+layout_preview.settings:
+  path: '/admin/config/gallopinto/settings'
+  defaults:
+    _form: '\Drupal\gp_layout_preview\Form\SettingsForm'
+    _title: 'Layout Preview Settings'
+  requirements:
+    _permission: 'administer site configuration'
+
 gp.layout_preview:
   path: '/node/{node}/layout/edit'
   defaults:

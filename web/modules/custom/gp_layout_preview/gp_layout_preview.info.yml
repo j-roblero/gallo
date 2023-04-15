@@ -3,3 +3,4 @@ description: Provides the logic to have a layout with preview form.
 package: gallopinto
 type: module
 core_version_requirement: ^9.2 || ^10
+configure: layout_preview.settings

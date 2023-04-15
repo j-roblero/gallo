@@ -1,0 +1,5 @@
+layout_preview.settings:
+  title: 'Layout Preview Settings'
+  description: 'Configure the layout preview module.'
+  route_name: layout_preview.settings
+  parent: system.admin_config_ui

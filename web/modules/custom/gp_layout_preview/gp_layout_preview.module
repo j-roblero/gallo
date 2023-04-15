@@ -37,5 +37,8 @@ function gp_layout_preview_page_attachments_alter(array &$attachments) {
  * Register theme templates.
  */
 function gp_layout_preview_theme(array $theme) {
-  return $theme;
+  $templates = \Drupal::config('gp_layout_preview.settings')
+    ->get('components.paragraph_list');
+
+  return $templates;
 }

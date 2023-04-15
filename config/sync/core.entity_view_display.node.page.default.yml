@@ -14,15 +14,11 @@ bundle: page
 mode: default
 content:
   field_sections:
-    type: layout_paragraphs_builder
+    type: layout_paragraphs
     label: hidden
     settings:
       view_mode: default
       link: ''
-      preview_view_mode: preview
-      nesting_depth: 4
-      require_layouts: 1
-      empty_message: Test
     third_party_settings: {  }
     weight: 101
     region: content
