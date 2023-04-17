@@ -12,9 +12,9 @@ use Drupal\node\NodeInterface;
  * Implements hook_entity_form_mode_alter().
  */
 function gp_layout_preview_entity_form_mode_alter(&$form_mode, EntityInterface $entity) {
-  $route_name = \Drupal::routeMatch()->getRouteName();
+  $is_preview = gp_layout_preview_is_preview();
 
-  if ($entity instanceof NodeInterface && $entity->bundle() === 'page' && $route_name === 'gp.layout_preview') {
+  if ($entity instanceof NodeInterface && $entity->bundle() === 'page' && $is_preview) {
     $form_mode = 'layout';
   }
 }
@@ -23,10 +23,10 @@ function gp_layout_preview_entity_form_mode_alter(&$form_mode, EntityInterface $
  * Implements hook_page_attachments_alter().
  */
 function gp_layout_preview_page_attachments_alter(array &$attachments) {
-  $route_name = \Drupal::routeMatch()->getRouteName();
+  $is_preview = gp_layout_preview_is_preview();
 
   // Inject theme styles.
-  if ($route_name === 'gp.layout_preview') {
+  if ($is_preview) {
     $attachments['#attached']['library'][] = 'gallopinto/global';
   }
 }
@@ -36,9 +36,30 @@ function gp_layout_preview_page_attachments_alter(array &$attachments) {
  *
  * Register theme templates.
  */
-function gp_layout_preview_theme(array $theme) {
+function gp_layout_preview_theme() {
   $templates = \Drupal::config('gp_layout_preview.settings')
     ->get('components.paragraph_list');
 
   return $templates;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function gp_layout_preview_preprocess_html(&$variables) {
+  $is_preview = gp_layout_preview_is_preview();
+
+  // Inject theme styles.
+  if ($is_preview) {
+    $variables['attributes']['class'][] = 'gin--edit-form';
+  }
+}
+
+/**
+ * Validates if route is for the layout preview page.
+ */
+function gp_layout_preview_is_preview() {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+
+  return $route_name === 'gp.layout_preview';
 }

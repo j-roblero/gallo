@@ -1,0 +1,15 @@
+.gin {
+  &--edit-form {
+    .page-wrapper {
+      &__node-edit-form {
+        // Remove the max-width from the layout preview.
+        .block-system-main-block,
+        .block-local-tasks-block,
+        .messages-list,
+        .node-form {
+          max-width: unset;
+        }
+      }
+    }
+  }
+}
