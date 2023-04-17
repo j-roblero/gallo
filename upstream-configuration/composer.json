@@ -14,6 +14,9 @@
         "drupal/gin_toolbar": "*",
         "drupal/components": "^3.0@beta",
         "drupal/emulsify_twig": "^4.0",
-        "drupal/layout_paragraphs": "^2.0"
-    }
+        "drupal/layout_paragraphs": "^2.0",
+        "drupal/config_filter": "^2.4",
+        "drupal/config_split": "^2.0@RC"
+    },
+    "minimum-stability": "beta"
 }
