@@ -13,6 +13,11 @@ Clear the cache of the dev site (using a `drush cr` via terminus) and create a n
 ```shell
   lando db-import PATH_TO_THE_FILE
 ```
+### Note:
+If you are not pulling this project from Pantheon.io, after importing the database, run:
+```
+  lando composer install
+```
 Then, you might need to build the theme. To do so, we recommend using [nvm](https://github.com/nvm-sh/nvm) to have an standard node version for the project.
 ```shell
   cd web/themes/custom/gallopinto && nvm use
