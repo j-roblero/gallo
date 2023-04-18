@@ -27,7 +27,7 @@ It is necessary to create a `settings.local.php` file with the following line:
 ```php
   $config['config_split.config_split.local']['status'] = TRUE;
 ```
-That line allows the config split module to know that this is a local environment and it should use the config overrides.
+That line lets the config split module know that this is a local environment and should use the config overrides.
 
 ---
 
