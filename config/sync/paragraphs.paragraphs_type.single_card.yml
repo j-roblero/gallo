@@ -1,0 +1,10 @@
+uuid: 97a4fa2d-3e89-46f3-88c4-9711e21ac152
+langcode: en
+status: true
+dependencies: {  }
+id: single_card
+label: 'Single Card'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,19 @@
+uuid: 3800df74-4f42-4f4d-895e-97adb3fc8d4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.single_card
+id: paragraph.single_card.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: single_card
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
