@@ -1,0 +1,21 @@
+uuid: cab68c91-25cf-48ae-8220-cf0b0bfba9da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.hero_banner
+  module:
+    - text
+id: paragraph.hero_banner.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: hero_banner
+label: Content
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

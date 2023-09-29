@@ -1,0 +1,21 @@
+uuid: 5575ec61-4fc2-4a2f-ad98-3227cae9dcad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_type_grid
+    - paragraphs.paragraphs_type.cards_grid
+  module:
+    - options
+id: paragraph.cards_grid.field_type_grid
+field_name: field_type_grid
+entity_type: paragraph
+bundle: cards_grid
+label: 'Type Grid'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
