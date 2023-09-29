@@ -37,3 +37,19 @@ $local_settings = __DIR__ . "/settings.local.php";
 if (file_exists($local_settings)) {
   include $local_settings;
 }
+
+$databases['default']['default'] = array (
+  'database' => 'drupal10',
+  'username' => 'drupal10',
+  'password' => 'drupal10',
+  'prefix' => '',
+  'host' => 'database',
+  'port' => '3306',
+  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
+  'driver' => 'mysql',
+  'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
+  'init_commands' => [
+    'isolation_level' => 'SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED',
+  ],
+);
+$settings['hash_salt'] = 'DpzLLbK3ffs4blXXVtGxbd7e8BDuKLJ_h0iOcaf_nZcvQc60AjOzX_ELbvBD-dsAPJOdmRztmw';
