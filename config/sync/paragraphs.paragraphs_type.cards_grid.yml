@@ -1,0 +1,10 @@
+uuid: 977a2ce4-941b-4017-9422-bf704b74f62f
+langcode: en
+status: true
+dependencies: {  }
+id: cards_grid
+label: 'Cards Grid'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

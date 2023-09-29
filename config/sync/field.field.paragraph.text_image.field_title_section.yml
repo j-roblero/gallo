@@ -1,0 +1,21 @@
+uuid: 7e4866f7-c5ee-4864-a686-27471279ed10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_section
+    - paragraphs.paragraphs_type.text_image
+  module:
+    - text
+id: paragraph.text_image.field_title_section
+field_name: field_title_section
+entity_type: paragraph
+bundle: text_image
+label: 'Title Section'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,27 @@
+uuid: 58429609-c254-456f-8906-73e3e2b2d11d
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_type_grid
+field_name: field_type_grid
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: timeline
+      label: Timeline
+    -
+      value: gridmultiple
+      label: 'Grid multiple lines'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

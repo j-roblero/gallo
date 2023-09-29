@@ -1,0 +1,59 @@
+{# If `directory` is defined, set the path relative for Drupal.
+# Otherwise, set the path relative to the Component Library. #}
+
+{% set header__logo_src = directory ? '/' ~ directory ~ '/images/logo.png' : 'logo.png' %}
+
+{% set header__base_class = 'header' %}
+
+{{ attach_library('gallopinto/menu') }}
+
+<header {{ bem(header__base_class) }}>
+  <div class="container header__content">
+    <div class="d-block d-xl-flex">
+
+      <div class="logo">
+        <div {{ bem('branding', [], header__base_class) }}>
+          {% block header__branding %}
+          {% endblock %}
+        </div>
+      </div>
+      <input class="checkbox" type="checkbox" id="toggler" name="">
+      <i class="icons open">
+        {% include "@atoms/images/icons/_icon.twig" with {
+          icon_base_class: "hamburger-icon",
+          icon_name: "hamburger",
+          icon_width: '24px',
+          icon_height: '24px',
+        } %}
+      </i>
+      <i class="icons close">
+        {% include "@atoms/images/icons/_icon.twig" with {
+          icon_base_class: "x-icon",
+          icon_name: "x",
+          icon_width: '24px',
+          icon_height: '24px',
+        } %}
+      </i>
+      <div class="menu">
+        <div class="menu_content">
+          <div {{ bem('menu_items', [], header__base_class) }}>
+            {% block header__menu %}
+            {% endblock %}
+          </div>
+          <div {{ bem('switcher', [], header__base_class) }}>
+            {% include "@atoms/images/icons/_icon.twig" with {
+              icon_base_class: "language-switcher",
+              icon_name: "language",
+              icon_width: '24px',
+              icon_height: '24px',
+            } %}
+            {% block header__language %}
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</header>

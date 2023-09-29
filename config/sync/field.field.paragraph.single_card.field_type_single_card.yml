@@ -1,0 +1,21 @@
+uuid: 9da0126d-08cc-435b-9d8b-60c742d98fcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_type_single_card
+    - paragraphs.paragraphs_type.single_card
+  module:
+    - options
+id: paragraph.single_card.field_type_single_card
+field_name: field_type_single_card
+entity_type: paragraph
+bundle: single_card
+label: 'Type Single Card'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,21 @@
+uuid: f15cf7a6-bf7c-4b10-8a51-def4b45068cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_section
+    - paragraphs.paragraphs_type.cards_grid
+  module:
+    - text
+id: paragraph.cards_grid.field_title_section
+field_name: field_title_section
+entity_type: paragraph
+bundle: cards_grid
+label: 'Title section'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

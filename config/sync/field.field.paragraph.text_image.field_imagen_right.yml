@@ -1,0 +1,23 @@
+uuid: be73b85d-3694-4ac8-8ca5-b14cf91c0464
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_imagen_right
+    - paragraphs.paragraphs_type.text_image
+id: paragraph.text_image.field_imagen_right
+field_name: field_imagen_right
+entity_type: paragraph
+bundle: text_image
+label: 'Imagen Right'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

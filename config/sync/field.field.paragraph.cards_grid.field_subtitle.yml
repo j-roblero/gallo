@@ -1,0 +1,19 @@
+uuid: 4eada6b4-99d0-4b23-8fee-6be145acd02e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_subtitle
+    - paragraphs.paragraphs_type.cards_grid
+id: paragraph.cards_grid.field_subtitle
+field_name: field_subtitle
+entity_type: paragraph
+bundle: cards_grid
+label: Subtitle
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
