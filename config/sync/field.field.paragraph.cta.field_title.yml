@@ -1,0 +1,19 @@
+uuid: 41c1abc5-ed91-4f79-b899-6ebae61a3480
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.cta
+id: paragraph.cta.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: cta
+label: 'Title Section'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
