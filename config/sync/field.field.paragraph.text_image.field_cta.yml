@@ -1,0 +1,49 @@
+uuid: 73983e2d-4a5b-4247-8178-fab8337f253d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta
+    - paragraphs.paragraphs_type.cta
+    - paragraphs.paragraphs_type.text_image
+  module:
+    - entity_reference_revisions
+id: paragraph.text_image.field_cta
+field_name: field_cta
+entity_type: paragraph
+bundle: text_image
+label: CTA
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      cta: cta
+    negate: 0
+    target_bundles_drag_drop:
+      cards_grid:
+        weight: 8
+        enabled: false
+      cta:
+        weight: 9
+        enabled: true
+      hero_banner:
+        weight: 10
+        enabled: false
+      image_slider:
+        weight: 11
+        enabled: false
+      section:
+        weight: 12
+        enabled: false
+      single_card:
+        weight: 13
+        enabled: false
+      text_image:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions
