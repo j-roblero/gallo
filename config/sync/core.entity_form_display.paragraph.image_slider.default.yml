@@ -1,0 +1,24 @@
+uuid: 9616216c-f6d4-4679-b903-1158242133de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_slider.field_image_slider
+    - paragraphs.paragraphs_type.image_slider
+  module:
+    - media_library
+id: paragraph.image_slider.default
+targetEntityType: paragraph
+bundle: image_slider
+mode: default
+content:
+  field_image_slider:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
