@@ -1,6 +1,12 @@
 // External Libraries
 @import '~normalize.css/normalize';
 @import '~breakpoint-sass/stylesheets/breakpoint';
+@import '../node_modules/bootstrap/scss/bootstrap.scss' ;
+@import '../node_modules/bootstrap/scss/_functions.scss';
+@import '../node_modules/bootstrap/scss/_variables.scss';
+@import '../node_modules/bootstrap/scss/mixins/_breakpoints.scss';
+@import '../node_modules/bootstrap/scss/_maps.scss';
+@import '../node_modules/bootstrap/scss/_utilities.scss';
 
 // Components
 @import '00-base/**/*.scss';

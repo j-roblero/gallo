@@ -1,0 +1,20 @@
+// Storybook styling
+.icons-demo {
+  display: flex;
+  flex-wrap: wrap;
+
+  .icon {
+    height: 100px;
+    width: 100px;
+
+    @media (prefers-color-scheme: dark) {
+    }
+  }
+
+  pre {
+    font-size: 0.8rem;
+    margin: 0;
+    text-align: center;
+  }
+}
+
