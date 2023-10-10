@@ -15,6 +15,11 @@
         <div {{ bem('branding', [], header__base_class) }}>
           {% block header__branding %}
           {% endblock %}
+          {% include "@atoms/images/image/responsive-image.twig" with {
+            image_src: header__logo_src,
+            image_alt: 'Logo',
+            image_width: '80px'
+          } %}
         </div>
       </div>
       <input class="checkbox" type="checkbox" id="toggler" name="">
