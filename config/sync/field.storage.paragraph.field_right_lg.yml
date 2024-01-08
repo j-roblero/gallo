@@ -1,0 +1,51 @@
+uuid: 4de816b5-c6c8-4211-aa01-c865f51f58f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_right_lg
+field_name: field_right_lg
+entity_type: paragraph
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 0
+      label: '0'
+    -
+      value: 8
+      label: '8'
+    -
+      value: 18
+      label: '18'
+    -
+      value: 32
+      label: '32'
+    -
+      value: 40
+      label: '40'
+    -
+      value: 48
+      label: '48'
+    -
+      value: 56
+      label: '56'
+    -
+      value: 64
+      label: '64'
+    -
+      value: 96
+      label: '96'
+    -
+      value: 112
+      label: '112'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

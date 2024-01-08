@@ -1,0 +1,10 @@
+uuid: e82749f9-b568-4a7d-8ee0-390d4c8c40e9
+langcode: en
+status: true
+dependencies: {  }
+id: spacings
+label: Spacings
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
