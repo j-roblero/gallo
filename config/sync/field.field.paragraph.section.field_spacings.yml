@@ -1,0 +1,52 @@
+uuid: 8956a194-0ae7-4542-8895-979d6e359885
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_spacings
+    - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.spacings
+  module:
+    - entity_reference_revisions
+id: paragraph.section.field_spacings
+field_name: field_spacings
+entity_type: paragraph
+bundle: section
+label: Spacings
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      spacings: spacings
+    negate: 0
+    target_bundles_drag_drop:
+      cards_grid:
+        weight: 9
+        enabled: false
+      cta:
+        weight: 10
+        enabled: false
+      hero_banner:
+        weight: 11
+        enabled: false
+      image_slider:
+        weight: 12
+        enabled: false
+      section:
+        weight: 13
+        enabled: false
+      single_card:
+        weight: 14
+        enabled: false
+      spacings:
+        weight: 15
+        enabled: true
+      text_image:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

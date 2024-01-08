@@ -1,0 +1,23 @@
+uuid: 49cd188c-54cd-4e61-8c08-60f55f38773a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bottom_md
+    - paragraphs.paragraphs_type.spacings
+  module:
+    - options
+id: paragraph.spacings.field_bottom_md
+field_name: field_bottom_md
+entity_type: paragraph
+bundle: spacings
+label: Bottom
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

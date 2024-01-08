@@ -24,6 +24,7 @@ content:
       empty_message: ''
     third_party_settings: {  }
 hidden:
+  body: true
   created: true
   path: true
   promote: true

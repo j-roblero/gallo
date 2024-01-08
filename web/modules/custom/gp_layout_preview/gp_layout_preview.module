@@ -63,3 +63,7 @@ function gp_layout_preview_is_preview() {
 
   return $route_name === 'gp.layout_preview';
 }
+
+function gp_layout_preview_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['#attached']['library'][] = 'gallopinto/update-spacing';
+}

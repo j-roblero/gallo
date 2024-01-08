@@ -1,0 +1,23 @@
+uuid: ea17dc88-a0a3-490b-9a3e-e0c24bda7b29
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_left_md
+    - paragraphs.paragraphs_type.spacings
+  module:
+    - options
+id: paragraph.spacings.field_left_md
+field_name: field_left_md
+entity_type: paragraph
+bundle: spacings
+label: Left
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

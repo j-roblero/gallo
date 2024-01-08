@@ -1,0 +1,23 @@
+uuid: 36c81aa8-74db-4c5d-914f-1de8676efe07
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_left_sm
+    - paragraphs.paragraphs_type.spacings
+  module:
+    - options
+id: paragraph.spacings.field_left_sm
+field_name: field_left_sm
+entity_type: paragraph
+bundle: spacings
+label: Left
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

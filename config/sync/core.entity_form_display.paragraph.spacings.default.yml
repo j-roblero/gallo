@@ -1,0 +1,232 @@
+uuid: fd188740-3ffd-4a5f-a1ce-5753f4efa18d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.spacings.field_bottom_lg
+    - field.field.paragraph.spacings.field_bottom_md
+    - field.field.paragraph.spacings.field_bottom_sm
+    - field.field.paragraph.spacings.field_left_lg
+    - field.field.paragraph.spacings.field_left_md
+    - field.field.paragraph.spacings.field_left_sm
+    - field.field.paragraph.spacings.field_right_lg
+    - field.field.paragraph.spacings.field_right_md
+    - field.field.paragraph.spacings.field_right_sm
+    - field.field.paragraph.spacings.field_top_lg
+    - field.field.paragraph.spacings.field_top_md
+    - field.field.paragraph.spacings.field_top_sm
+    - paragraphs.paragraphs_type.spacings
+  module:
+    - field_group
+third_party_settings:
+  field_group:
+    group_dispositivo:
+      children:
+        - group_desktop
+        - group_tablet
+        - group_mobile
+      label: Dispositivo
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_desktop:
+      children:
+        - group_spacings_desktop
+      label: Desktop
+      region: content
+      parent_name: group_dispositivo
+      weight: 4
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_spacings_desktop:
+      children:
+        - field_top_lg
+        - field_right_lg
+        - field_bottom_lg
+        - field_left_lg
+      label: Spacings
+      region: content
+      parent_name: group_desktop
+      weight: 2
+      format_type: html_element
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: 'style="display: flex; grid-gap: 10px;"'
+        effect: none
+        speed: fast
+        required_fields: true
+    group_tablet:
+      children:
+        - group_spacings_tablet
+      label: Tablet
+      region: content
+      parent_name: group_dispositivo
+      weight: 5
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_spacings_tablet:
+      children:
+        - field_top_md
+        - field_right_md
+        - field_bottom_md
+        - field_left_md
+      label: Spacings
+      region: content
+      parent_name: group_tablet
+      weight: 4
+      format_type: html_element
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: 'style="display: flex; grid-gap: 10px;"'
+        effect: none
+        speed: fast
+        required_fields: true
+    group_mobile:
+      children:
+        - group_spacings_mobile
+      label: Mobile
+      region: content
+      parent_name: group_dispositivo
+      weight: 6
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_spacings_mobile:
+      children:
+        - field_top_sm
+        - field_right_sm
+        - field_bottom_sm
+        - field_left_sm
+      label: Spacings
+      region: content
+      parent_name: group_mobile
+      weight: 4
+      format_type: html_element
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: 'style="display: flex; grid-gap: 10px;"'
+        effect: none
+        speed: fast
+        required_fields: true
+id: paragraph.spacings.default
+targetEntityType: paragraph
+bundle: spacings
+mode: default
+content:
+  field_bottom_lg:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bottom_md:
+    type: options_select
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bottom_sm:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_left_lg:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_left_md:
+    type: options_select
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_left_sm:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_right_lg:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_right_md:
+    type: options_select
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_right_sm:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_top_lg:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_top_md:
+    type: options_select
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_top_sm:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

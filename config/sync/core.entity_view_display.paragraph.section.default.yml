@@ -1,0 +1,33 @@
+uuid: d8247123-00f4-4ea4-9db7-893e17616ae2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.section.field_custom_classes
+    - field.field.paragraph.section.field_spacings
+    - paragraphs.paragraphs_type.section
+  module:
+    - entity_reference_revisions
+id: paragraph.section.default
+targetEntityType: paragraph
+bundle: section
+mode: default
+content:
+  field_custom_classes:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_spacings:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

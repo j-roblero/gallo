@@ -1,0 +1,23 @@
+uuid: 4be85594-b0c4-4892-8195-d382feba9596
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_right_sm
+    - paragraphs.paragraphs_type.spacings
+  module:
+    - options
+id: paragraph.spacings.field_right_sm
+field_name: field_right_sm
+entity_type: paragraph
+bundle: spacings
+label: Right
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings: {  }
+field_type: list_integer
