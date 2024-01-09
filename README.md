@@ -112,9 +112,9 @@ This section describes the commands required to start development for work that 
 # To clone the upstream
 1. Clone
 
-2. lando start
+2. `lando start`
 
-3. lando composer i
+3. `lando composer i`
 
 4. Configure the database
 
@@ -122,24 +122,24 @@ This section describes the commands required to start development for work that 
 
     1. Shortcut
 
-        ``` 
+        ```
         [error]  Drupal\Core\Config\ConfigImporterException: There were errors validating the config synchronization.
         Site UUID in source storage does not match the target storage.
         Entities exist of type <em class="placeholder">Shortcut link</em> and <em class="placeholder">Shortcut set</em> <em class="placeholder">Default</em>. These entities need to be deleted before importing. in Drupal\Core\Config\ConfigImporter->validate() (line 788 of /app/web/core/lib/Drupal/Core/Config/ConfigImporter.php).
         ```
-        ###### Solution: 
-        - You must go to the site and edit the ``` Shortcut ``` and delete the existing ones.
+        ###### Solution:
+        - In the Drupal site navigate to  Configuration > User interface > Shortcut, then edit the ``` Shortcut Set``` and delete the existing ones.
 
     2. UUID
-    
-        ``` 
-        The import failed due to the following         
-        Site UUID in source storage does not match the target                                                      
-        Entities exist of type <em class="placeholder">Shortcut link</em> and <em class="placeholder">Shortcut set</em> <em class="placeholder">Default</em>. These entities need to be deleted before importing. 
+
         ```
-        ###### Solution: 
-        - You must export the settings and search with:
-        ``` ctrl + p ``` the file ``` system.site.php ```, copy the ``` uuid ```. 
-        - Discard all the changes you have from the configurations and change the ``` uuid ``` to the one you copied above.
+        The import failed due to the following
+        Site UUID in source storage does not match the target
+        Entities exist of type <em class="placeholder">Shortcut link</em> and <em class="placeholder">Shortcut set</em> <em class="placeholder">Default</em>. These entities need to be deleted before importing.
+        ```
+        ###### Solution:
+        - You must **export the settings** and search with:
+        `ctrl + p` the file `system.site.yml`, then copy the `uuid`.
+        - Discard all the changes from the exported configurations and change the `uuid` to the one you copied above.
 
 6. Import settings again and you're done
