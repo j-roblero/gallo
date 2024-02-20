@@ -1,9 +1,9 @@
 _core:
   default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
 langcode: en
-uuid: faec02cc-96d6-4ef0-b820-7cdc70b1f16f
-name: 'Gallo pinto'
-mail: j.garita@paralleldevs.com
+uuid: 4922e1c4-dce5-45a5-a8e9-ffbc34f9432e
+name: 'Diamond Global'
+mail: info@paralleldevs.com
 slogan: ''
 page:
   403: ''
