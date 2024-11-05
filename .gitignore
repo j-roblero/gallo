@@ -98,3 +98,6 @@
 
 # Ignore MacOS files
 .DS_Store
+
+# Database dumps
+*.sql
