@@ -1,15 +1,15 @@
-uuid: 495a89c1-8e17-4089-b62f-564baf29a4ef
+uuid: a581d4bc-7d5b-49c4-a2fd-5148af7d479f
 langcode: en
 status: true
 dependencies:
   theme:
-    - gallopinto
+    - emulsify
 _core:
-  default_config_hash: ydSxdq7R66I8UMC460rOzlfzvlUL4VRbdwc6z9DWaUI
-id: gallopinto_secondary_local_tasks
-theme: gallopinto
+  default_config_hash: BCWhood0xXFQYqxFgL1spXdb9KeIuXH1YvTdjIEedDg
+id: emulsify_secondary_local_tasks
+theme: emulsify
 region: header
-weight: -2
+weight: 0
 provider: null
 plugin: local_tasks_block
 settings:

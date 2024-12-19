@@ -1,15 +1,15 @@
-uuid: ebe1ec13-c855-4abe-8f05-a676c2c6ed26
+uuid: d7a3d46c-a400-4196-845f-2bc9d7aacd49
 langcode: en
 status: true
 dependencies:
   theme:
-    - gallopinto
+    - emulsify
 _core:
-  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
-id: gallopinto_page_title
-theme: gallopinto
+  default_config_hash: HLQY2xgby8K3vN_98hiOSasOhm9pdCsH234-s0duJ8Q
+id: emulsify_page_title
+theme: emulsify
 region: header
-weight: -5
+weight: -30
 provider: null
 plugin: page_title_block
 settings:
