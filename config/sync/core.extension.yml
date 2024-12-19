@@ -16,10 +16,10 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  emulsify_tools: 0
   emulsify_twig: 0
   entity_reference_revisions: 0
   field: 0
-  field_group: 0
   field_ui: 0
   file: 0
   filter: 0
@@ -41,6 +41,7 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  phpass: 0
   search: 0
   shortcut: 0
   system: 0
@@ -59,5 +60,5 @@ theme:
   claro: 0
   gin: 0
   stable9: 0
-  gallopinto: 0
+  emulsify: 0
 profile: standard

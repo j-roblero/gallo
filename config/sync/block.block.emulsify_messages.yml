@@ -1,17 +1,17 @@
-uuid: 003ffa86-24a4-485f-8c09-060011558a39
+uuid: 38cf5ad0-23e1-4c4a-b2ed-819c0f87a131
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - gallopinto
+    - emulsify
 _core:
-  default_config_hash: BZ5tpW7H8X4PVGRm3MImTIHd2tN0eF7zOtp4SpRYUA0
-id: gallopinto_messages
-theme: gallopinto
+  default_config_hash: WvPhI8OwllG0gE69-F8qL3ai3nd5SbYD6JpmEuZcyok
+id: emulsify_messages
+theme: emulsify
 region: header
-weight: -5
+weight: 0
 provider: null
 plugin: system_messages_block
 settings:

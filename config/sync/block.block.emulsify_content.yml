@@ -1,15 +1,15 @@
-uuid: cf2c3a8d-2079-4bd9-8075-2a059ceb2806
+uuid: 657b0936-167b-43e2-ad37-70999cb96502
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - gallopinto
+    - emulsify
 _core:
-  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
-id: gallopinto_content
-theme: gallopinto
+  default_config_hash: hBHXB7hC05XU7pDYzETt-GUcpFlogK1gkjyAsg0Ym58
+id: emulsify_content
+theme: emulsify
 region: content
 weight: 0
 provider: null
