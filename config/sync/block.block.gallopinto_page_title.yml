@@ -1,0 +1,20 @@
+uuid: b5429924-d22e-46a1-ac35-2060cde4a3e3
+langcode: en
+status: true
+dependencies:
+  theme:
+    - gallopinto
+_core:
+  default_config_hash: HLQY2xgby8K3vN_98hiOSasOhm9pdCsH234-s0duJ8Q
+id: gallopinto_page_title
+theme: gallopinto
+region: header
+weight: -30
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }
