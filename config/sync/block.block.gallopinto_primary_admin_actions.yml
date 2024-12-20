@@ -1,15 +1,15 @@
-uuid: 6689523c-182f-43e6-8c2c-fe225775079b
+uuid: acd825ec-5c5a-4c8e-9ce4-23d5bbb69690
 langcode: en
 status: true
 dependencies:
   theme:
     - gallopinto
 _core:
-  default_config_hash: OQ9aJ-4qVwK1x00o9EOYK4eFDjQr_HLpbPiJaPSVZiQ
-id: gallopinto_local_actions
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: gallopinto_primary_admin_actions
 theme: gallopinto
-region: content
-weight: -10
+region: header
+weight: -5
 provider: null
 plugin: local_actions_block
 settings:
