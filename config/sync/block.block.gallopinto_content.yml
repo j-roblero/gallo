@@ -1,0 +1,22 @@
+uuid: baa35930-4699-4384-ad00-637877c30f60
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - gallopinto
+_core:
+  default_config_hash: hBHXB7hC05XU7pDYzETt-GUcpFlogK1gkjyAsg0Ym58
+id: gallopinto_content
+theme: gallopinto
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

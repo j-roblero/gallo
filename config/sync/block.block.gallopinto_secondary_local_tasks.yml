@@ -1,0 +1,22 @@
+uuid: 91818edb-4434-4a44-b515-a20b8258a40a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - gallopinto
+_core:
+  default_config_hash: BCWhood0xXFQYqxFgL1spXdb9KeIuXH1YvTdjIEedDg
+id: gallopinto_secondary_local_tasks
+theme: gallopinto
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }
