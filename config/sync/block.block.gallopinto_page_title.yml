@@ -1,15 +1,15 @@
-uuid: b5429924-d22e-46a1-ac35-2060cde4a3e3
+uuid: ebe1ec13-c855-4abe-8f05-a676c2c6ed26
 langcode: en
 status: true
 dependencies:
   theme:
     - gallopinto
 _core:
-  default_config_hash: HLQY2xgby8K3vN_98hiOSasOhm9pdCsH234-s0duJ8Q
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
 id: gallopinto_page_title
 theme: gallopinto
 region: header
-weight: -30
+weight: -5
 provider: null
 plugin: page_title_block
 settings:
