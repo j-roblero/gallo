@@ -4,6 +4,8 @@
 This document outlines the steps required to install and configure Emulsify 5 as a theme in a Drupal project, including the installation of dependencies and additional tools.
 Note: It is important to note that Gallopinto is set as the default theme in this upstream. However, the next steps will involve removing Gallopinto as the default theme, enabling Emulsify as the new default theme, and developing a custom subtheme based on Emulsify.
 
+This means that gallopinto theme that have been modified would be obsolete, it would be needed to creeate a new subtheme and migrate the modified gallopinto theme into the new subtheme to keep track all that have been develop into gallopinto theme.
+
 ---
 
 ## Installation Steps
