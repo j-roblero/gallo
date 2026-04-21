@@ -2,144 +2,158 @@
 This repository is based on a custom upstream created by ParallelDevs.
 
 
+## New project setup (do this once per Pantheon instance)
+
+When creating a new site from this upstream, the Pantheon site will have a different UUID than the one stored in `config/sync/system.site.yml`. You need to sync it once so all developers inherit the correct UUID automatically.
+
+**1. Get the UUID from Pantheon:**
+```shell
+terminus drush <site-name>.dev -- config-get system.site uuid
+```
+
+**2. Update `config/sync/system.site.yml` with the UUID from above:**
+```yaml
+uuid: <uuid-from-pantheon>
+```
+
+**3. Delete orphan Shortcuts on Pantheon:**
+```shell
+terminus drush <site-name>.dev -- eval "\Drupal::entityTypeManager()->getStorage('shortcut_set')->load('default')->delete();"
+terminus drush <site-name>.dev -- cim -y
+```
+
+**4. Commit and push the UUID fix:**
+```shell
+git add config/sync/system.site.yml
+git commit -m "Fix site UUID to match Pantheon instance"
+git push
+```
+
+From this point on, no developer will need to worry about the UUID or shortcuts on Pantheon again.
+
+---
+
 ## Getting Started
-This projects uses [Lando](https://docs.lando.dev/getting-started/), if you are pulling this project from pantheon, it is a good idea to run the following commands in order to sync your local environment with the live environment.
 
-To start the site:
+This project uses [DDEV](https://ddev.readthedocs.io/en/stable/) for local development.
+
+### Requirements
+- [DDEV](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/)
+- [Terminus](https://docs.pantheon.io/terminus/install) (authenticated with your Pantheon account)
+
+### First time setup
+
+**1. Start DDEV**
 ```shell
-  lando start
-```
-Clear the cache of the dev site (using a `drush cr` via terminus) and create a new backup. Then download the database, and import it using:
-```shell
-  lando db-import PATH_TO_THE_FILE
-```
-### Note:
-If you are not pulling this project from Pantheon.io, after importing the database, run:
-```
-  lando composer install
-```
-Then, you might need to build the theme. To do so, we recommend using [nvm](https://github.com/nvm-sh/nvm) to have an standard node version for the project.
-```shell
-  cd web/themes/custom/gallopinto && nvm use
-```
-Once you're using the recommended node version, run:
-```shell
-  npm run build-storybook && lando drush cr
+ddev start
 ```
 
-### Important:
-It is necessary to create a `settings.local.php` file with the following line:
+**2. Download and import the database from Pantheon**
+```shell
+terminus backup:get gallopinto-test.dev --element=db --to=/tmp/pantheon-db.sql.gz
+ddev import-db --file=/tmp/pantheon-db.sql.gz
+```
+
+**3. Delete orphan Shortcuts**
+```shell
+ddev drush eval "\Drupal::entityTypeManager()->getStorage('shortcut_set')->load('default')->delete();"
+```
+
+**4. Import configuration**
+```shell
+ddev drush cim -y
+```
+
+**5. Clear cache**
+```shell
+ddev drush cr
+```
+
+Your site is now available at **https://gallopinto-test.ddev.site**
+
+---
+
+### Theme setup
+
+To build the theme, use [nvm](https://github.com/nvm-sh/nvm) to ensure the correct Node version:
+```shell
+cd web/themes/custom/gallopinto && nvm use
+npm run build-storybook
+ddev drush cr
+```
+
+### settings.local.php
+
+Create a `settings.local.php` file in `web/sites/default/` with the following:
 ```php
-  $config['config_split.config_split.local']['status'] = TRUE;
+$config['config_split.config_split.local']['status'] = TRUE;
 ```
-That line lets the config split module know that this is a local environment and should use the config overrides.
+This tells config_split to use the local environment overrides.
 
 ---
 
 ## Local development
 
 ### Code standards
-We follow Drupal best practices. These are enforced using PHP_CodeSniffer via PHPCS. To run the code checks, execute the following command:
+We follow Drupal best practices enforced via PHPCS. To run code checks:
 ```shell
 sh ./scripts/check-phpcs.sh
 ```
 
 ### XDebug
-To enable XDebug, execute:
 ```shell
-lando xdebug-on
-```
-Once you have finished using XDebug, you can disable it by running:
-```shell
-lando xdebug-off
+ddev xdebug on
+ddev xdebug off
 ```
 
 ---
 
 ## Development workflow
-This section describes the commands required to start development for work that is part of the normal release cycle.
 
 1. Start clean from the upstream's integration branch
 
     ```shell
-      git checkout main
-      git fetch origin
-      git rebase origin/main
+    git checkout main
+    git fetch origin
+    git rebase origin/main
     ```
 
-2. Create a new feature branch from `main`
+2. Create a new feature branch
 
     ```shell
-      git checkout -b ABC-000-feature-branch
+    git checkout -b ABC-000-feature-branch
     ```
 
-3. If you have not already, start the environment
+3. Start the environment
 
-   ```shell
-   lando start
-   ```
-### To Create a Pull Request
+    ```shell
+    ddev start
+    ```
 
-1. After you make changes inside your local drupal site, export your configuration from the database to your configuration.
-   Export your drupal config changes if you have them.
+### To create a Pull Request
 
-   ```shell
-   lando drush cex
-   ```
+1. Export your Drupal config changes:
 
-2. Commit your changes.
+    ```shell
+    ddev drush cex
+    ```
 
-   ```shell
-   git status
-   git add -p
-   git commit -m "ABC-000: Committing new changes to site."
-   ```
+2. Commit your changes:
 
-3. Pull the latest changes from integration branch.
+    ```shell
+    git status
+    git add -p
+    git commit -m "ABC-000: Committing new changes to site."
+    ```
 
-   ```shell
-   git pull --rebase origin main
-   ```
+3. Pull the latest changes from the integration branch:
 
-4. Push your branch to the repository.
+    ```shell
+    git pull --rebase origin main
+    ```
 
-   ```shell
-   git push -u origin ABC-000-feature-branch
-   ```
+4. Push your branch and open a Pull Request on GitHub.
 
-5. Go to the site repository on GitHub, and create a new pull request with the new changes.
-
-# To clone the upstream
-1. Clone
-
-2. `lando start`
-
-3. `lando composer i`
-
-4. Configure the database
-
-5. When importing you will get 2 errors
-
-    1. Shortcut
-
-        ```
-        [error]  Drupal\Core\Config\ConfigImporterException: There were errors validating the config synchronization.
-        Site UUID in source storage does not match the target storage.
-        Entities exist of type <em class="placeholder">Shortcut link</em> and <em class="placeholder">Shortcut set</em> <em class="placeholder">Default</em>. These entities need to be deleted before importing. in Drupal\Core\Config\ConfigImporter->validate() (line 788 of /app/web/core/lib/Drupal/Core/Config/ConfigImporter.php).
-        ```
-        ###### Solution:
-        - In the Drupal site navigate to  Configuration > User interface > Shortcut, then edit the ``` Shortcut Set``` and delete the existing ones.
-
-    2. UUID
-
-        ```
-        The import failed due to the following
-        Site UUID in source storage does not match the target
-        Entities exist of type <em class="placeholder">Shortcut link</em> and <em class="placeholder">Shortcut set</em> <em class="placeholder">Default</em>. These entities need to be deleted before importing.
-        ```
-        ###### Solution:
-        - You must **export the settings** and search with:
-        `ctrl + p` the file `system.site.yml`, then copy the `uuid`.
-        - Discard all the changes from the exported configurations and change the `uuid` to the one you copied above.
-
-6. Import settings again and you're done
+    ```shell
+    git push -u origin ABC-000-feature-branch
+    ```
