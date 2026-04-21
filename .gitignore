@@ -101,3 +101,6 @@
 
 # Database dumps
 *.sql
+
+# Theme build artifacts
+web/themes/custom/gallopinto/node_modules/
