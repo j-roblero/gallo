@@ -29,6 +29,7 @@
     ],
     "number-leading-zero": "always",
     "number-no-trailing-zeros": true,
-    "prettier/prettier": true
+    "prettier/prettier": true,
+    "import-notation": null
   }
 }
