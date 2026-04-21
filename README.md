@@ -31,6 +31,26 @@ git push
 
 From this point on, no developer will need to worry about the UUID or shortcuts on Pantheon again.
 
+### Automated setup script
+
+Instead of the manual steps above, you can use the setup script included in this repo. It reads the UUID directly from the Pantheon database, updates the sync storage, and deletes the orphan shortcuts — all without requiring a commit.
+
+**1. Run the script:**
+```shell
+terminus drush <site-name>.dev -- php-script scripts/site-setup.php
+```
+
+**2. Import configuration (twice):**
+```shell
+terminus drush <site-name>.dev -- cim -y
+terminus drush <site-name>.dev -- cim -y
+```
+
+**3. Clear cache:**
+```shell
+terminus drush <site-name>.dev -- cr
+```
+
 ---
 
 ## Getting Started
