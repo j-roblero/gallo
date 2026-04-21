@@ -27,7 +27,7 @@
     "postinstall": "npx patch-package",
     "prepare": "[ -d '.git' ] && (husky install) || true",
     "prettier": "prettier --ignore-unknown \"./components/**/*.{js,yml,scss,md}\"",
-    "prettier-fix": "prettier --write --ignore-unknown \"./components**/*.{js,yml,scss,md}\"",
+    "prettier-fix": "prettier --write --ignore-unknown \"./components/**/*.{js,yml,scss,md}\"",
     "storybook": "start-storybook --ci -s ./dist,./images -p 6006",
     "storybook-build": "npm run build && build-storybook -s ./dist,./images -o .out",
     "storybook-deploy": "storybook-to-ghpages -o .out",

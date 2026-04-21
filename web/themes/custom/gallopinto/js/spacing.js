@@ -2,8 +2,6 @@
   Drupal.behaviors.updateSpacing = {
     attach: function (context, settings) {
 
-      console.log('entre');
-      
       let sizes = ['lg', 'md', 'sm'];
 
       $('.field--name-field-value-lg').css('display', 'none');
