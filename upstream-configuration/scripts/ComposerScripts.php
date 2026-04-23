@@ -217,6 +217,7 @@ class ComposerScripts {
     // Drupal 9 requires PHP 7.3 at a minimum.
     // Integrated Composer requires PHP 7.1 at a minimum.
     $patchVersions = [
+      '8.3' => '8.3.0',
       '8.2' => '8.2.0',
       '8.1' => '8.1.13',
       '8.0' => '8.0.26',
