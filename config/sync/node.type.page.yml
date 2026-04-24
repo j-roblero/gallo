@@ -11,7 +11,7 @@ third_party_settings:
 name: Page
 type: page
 description: 'A landing page that uses Layout Paragraphs.'
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: false
