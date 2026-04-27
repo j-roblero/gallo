@@ -1,0 +1,108 @@
+applications:
+  gallopinto:
+    source:
+      root: "/"
+
+    type: "php:8.3"
+
+    runtime:
+      extensions:
+        - apcu
+        - blackfire
+        - sodium
+        - redis
+
+    dependencies:
+      php:
+        composer/composer: "^2"
+
+    build:
+      flavor: composer
+
+    variables:
+      php:
+        memory_limit: 256M
+        opcache.memory_consumption: 192
+
+    relationships:
+      database: "db:mysql"
+      redis: "cache:redis"
+
+    mounts:
+      "/web/sites/default/files":
+        source: "storage"
+        source_path: "files"
+      "/tmp":
+        source: "tmp"
+        source_path: "tmp"
+      "/private":
+        source: "storage"
+        source_path: "private"
+
+    hooks:
+      build: |
+        set -e
+        # Mover vendor al directorio raíz si está en web/
+        composer dump-autoload
+
+      deploy: |
+        set -e
+        php ./vendor/bin/drush -y cache:rebuild
+        php ./vendor/bin/drush -y updatedb
+        php ./vendor/bin/drush -y config:import
+        php ./vendor/bin/drush -y cache:rebuild
+
+    web:
+      locations:
+        "/":
+          root: "web"
+          expires: 5m
+          passthru: "/index.php"
+          allow: false
+          rules:
+            # Archivos estáticos permitidos
+            '\.(css|js|gif|jpe?g|png|ttf|eot|woff2?|otf|svg|ico|webp|avif)$':
+              allow: true
+              expires: 2w
+            # Robots y sitemap
+            '^/robots\.txt$':
+              allow: true
+            '^/sitemap\.xml$':
+              allow: true
+        "/sites/default/files":
+          allow: true
+          expires: 5m
+          passthru: "/index.php"
+          root: "web/sites/default/files"
+          scripts: false
+          rules:
+            # Bloquear archivos PHP en el directorio de archivos
+            '\.php$':
+              allow: false
+
+    crons:
+      drupal:
+        spec: "*/20 * * * *"
+        commands:
+          start: "cd web && php ../vendor/bin/drush core-cron"
+
+services:
+  db:
+    type: mariadb:10.6
+
+  cache:
+    type: redis:7.2
+
+routes:
+  "https://{default}/":
+    type: upstream
+    upstream: "gallopinto:http"
+    cache:
+      enabled: true
+      cookies:
+        - '/^SS?ESS/'
+        - '/^Drupal.visitor/'
+
+  "https://www.{default}/":
+    type: redirect
+    to: "https://{default}/"

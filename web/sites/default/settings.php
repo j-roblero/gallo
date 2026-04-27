@@ -41,6 +41,10 @@ if (file_exists($local_settings)) {
 if (file_exists($app_root . '/' . $site_path . '/settings.ddev.php')) {
   include $app_root . '/' . $site_path . '/settings.ddev.php';
 }
+
+if (file_exists(__DIR__ . '/settings.upsun.php')) {
+  include __DIR__ . '/settings.upsun.php';
+}
 /**
  * Add the following lines to the database config array.
  *
