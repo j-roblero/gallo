@@ -1,0 +1,17 @@
+uuid: 04a72515-fcd3-408c-beb3-72e55fb9e533
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Article
+type: article
+description: 'For blog posts, news, and time-sensitive content.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true
