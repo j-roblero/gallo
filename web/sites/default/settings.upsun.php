@@ -60,5 +60,5 @@ $settings['file_temp_path']    = '/tmp';
 
 // Hash salt desde variable de entorno de Upsun
 if ($platformConfig->isValidPlatform()) {
-  $settings['hash_salt'] = $platformConfig->projectEntropy();
+  $settings['hash_salt'] = getenv('PLATFORM_PROJECT_ENTROPY') ?: '';
 }
