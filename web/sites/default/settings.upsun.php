@@ -41,7 +41,7 @@ if ($platformConfig->hasRelationship('redis')) {
 }
 
 // Trusted host patterns
-if ($platformConfig->isAvailable()) {
+if ($platformConfig->isValidPlatform()) {
   $routes = $platformConfig->routes();
   foreach ($routes as $url => $route) {
     if ($route['type'] === 'upstream' && str_contains($route['upstream'], 'gallopinto')) {
@@ -59,6 +59,6 @@ $settings['file_private_path'] = '/app/private';
 $settings['file_temp_path']    = '/tmp';
 
 // Hash salt desde variable de entorno de Upsun
-if ($platformConfig->isAvailable()) {
+if ($platformConfig->isValidPlatform()) {
   $settings['hash_salt'] = $platformConfig->projectEntropy();
 }
